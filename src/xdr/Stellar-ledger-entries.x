@@ -78,7 +78,10 @@ enum LedgerEntryType
     ACCOUNT = 0,
     TRUSTLINE = 1,
     OFFER = 2,
-    DATA = 3
+    DATA = 3,
+    POLL = 4,
+    PERMISSION = 5,
+    CHOICE = 6
 };
 
 struct Signer
@@ -256,6 +259,55 @@ struct DataEntry
     ext;
 };
 
+
+struct PollEntry 
+{
+    int64 id;
+    
+    int32 numberOfChoices;
+    string details<>;
+
+    // reserved for future use
+    union switch (int v)
+    {
+    case 0:
+        void;
+    }
+    ext;
+};
+
+struct PermissionEntry 
+{
+    int64 pollID;
+    AccountID accountID;
+
+    bool isUsed;
+
+    // reserved for future use
+    union switch (int v)
+    {
+    case 0:
+        void;
+    }
+    ext;
+};
+
+struct ChoiceEntry 
+{
+    int32 number;
+    int64 pollID;
+
+    int64 votes;
+
+    // reserved for future use
+    union switch (int v)
+    {
+    case 0:
+        void;
+    }
+    ext;
+};
+
 struct LedgerEntry
 {
     uint32 lastModifiedLedgerSeq; // ledger the LedgerEntry was last changed
@@ -270,6 +322,12 @@ struct LedgerEntry
         OfferEntry offer;
     case DATA:
         DataEntry data;
+    case POLL:
+        PollEntry poll;
+    case PERMISSION:
+        PermissionEntry permission;
+    case CHOICE:
+        ChoiceEntry choice;
     }
     data;
 

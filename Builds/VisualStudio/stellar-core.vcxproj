@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="DebugNoPostgres|x64">
@@ -43,8 +42,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -86,8 +84,7 @@
       <DisableSpecificWarnings>4060;4100;4127;4324;4408;4510;4512;4582;4583;4592</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BrowseInformation>false</BrowseInformation>
-      <ControlFlowGuard>
-      </ControlFlowGuard>
+      <ControlFlowGuard />
       <SmallerTypeCheck>false</SmallerTypeCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
@@ -98,12 +95,10 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;psapi.lib;%(AdditionalDependencies);C:\Program Files\PostgreSQL\9.5\lib\libpq.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command />
     </PreBuildEvent>
     <PreBuildEvent>
-      <Message>
-      </Message>
+      <Message />
     </PreBuildEvent>
     <CustomBuildStep>
       <Inputs>src/generated/xdr/Stellar-overlay.h</Inputs>
@@ -113,12 +108,10 @@
       <TreatOutputAsContent>false</TreatOutputAsContent>
     </CustomBuildStep>
     <CustomBuild>
-      <Command>
-      </Command>
+      <Command />
     </CustomBuild>
     <CustomBuild>
-      <Outputs>
-      </Outputs>
+      <Outputs />
       <Message />
       <LinkObjects>false</LinkObjects>
     </CustomBuild>
@@ -144,8 +137,7 @@ exit /b 0
       <DisableSpecificWarnings>4060;4100;4127;4324;4408;4510;4512;4582;4583;4592</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BrowseInformation>false</BrowseInformation>
-      <ControlFlowGuard>
-      </ControlFlowGuard>
+      <ControlFlowGuard />
       <SmallerTypeCheck>false</SmallerTypeCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
@@ -154,16 +146,13 @@ exit /b 0
     <Link>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;psapi.lib;</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>
-      </IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries />
     </Link>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command />
     </PreBuildEvent>
     <PreBuildEvent>
-      <Message>
-      </Message>
+      <Message />
     </PreBuildEvent>
     <CustomBuildStep>
       <Inputs>src/generated/xdr/Stellar-overlay.h</Inputs>
@@ -173,14 +162,11 @@ exit /b 0
       <TreatOutputAsContent>false</TreatOutputAsContent>
     </CustomBuildStep>
     <CustomBuild>
-      <Command>
-      </Command>
+      <Command />
     </CustomBuild>
     <CustomBuild>
-      <Outputs>
-      </Outputs>
-      <Message>
-      </Message>
+      <Outputs />
+      <Message />
       <LinkObjects>false</LinkObjects>
     </CustomBuild>
     <PostBuildEvent>
@@ -216,12 +202,10 @@ exit /b 0
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;psapi.lib;%(AdditionalDependencies);C:\Program Files\PostgreSQL\9.5\lib\libpq.lib</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command />
     </PreBuildEvent>
     <PreBuildEvent>
-      <Message>
-      </Message>
+      <Message />
     </PreBuildEvent>
     <CustomBuildStep>
       <Inputs>src/generated/xdr/Stellar-overlay.h</Inputs>
@@ -231,12 +215,10 @@ exit /b 0
       <TreatOutputAsContent>false</TreatOutputAsContent>
     </CustomBuildStep>
     <CustomBuild>
-      <Command>
-      </Command>
+      <Command />
     </CustomBuild>
     <CustomBuild>
-      <Outputs>
-      </Outputs>
+      <Outputs />
       <Message />
       <LinkObjects>false</LinkObjects>
     </CustomBuild>
@@ -922,12 +904,9 @@ exit /b 0
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src/generated/xdr/Stellar-types.h</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">src/generated/xdr/Stellar-types.h</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src/generated/xdr/Stellar-types.h</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">
-      </AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'" />
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
       <OutputItemType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ClInclude</OutputItemType>
       <OutputItemType Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">ClInclude</OutputItemType>
       <OutputItemType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ClInclude</OutputItemType>
@@ -991,18 +970,15 @@ exit /b 0
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sed.exe -e "s/%%%%VERSION%%%%/msvc custom/" &lt; %(FullPath) &gt; %(RelativeDir)\StellarCoreVersion.cpp</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating StellarCoreVersion.cpp</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../../src/main/StellarCoreVersion.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
       <Command Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">sed.exe -e "s/%%%%VERSION%%%%/msvc custom/" &lt; %(FullPath) &gt; %(RelativeDir)\StellarCoreVersion.cpp</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sed.exe -e "s/%%%%VERSION%%%%/msvc custom/" &lt; %(FullPath) &gt; %(RelativeDir)\StellarCoreVersion.cpp</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">Generating StellarCoreVersion.cpp</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating StellarCoreVersion.cpp</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">../../src/main/StellarCoreVersion.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'">
-      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugNoPostgres|x64'" />
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../../src/main/StellarCoreVersion.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     </CustomBuild>
     <None Include="..\..\src\ledger\readme.md" />
     <None Include="..\..\src\overlay\readme.md" />
@@ -1045,8 +1021,8 @@ exit /b 0
   <ItemGroup>
     <Text Include="..\..\INSTALL-Windows.md" />
     <Text Include="..\..\LICENSE-APACHE.txt" />
+    <ClInclude Include="..\..\src\transactions\CreatePollOpFrame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

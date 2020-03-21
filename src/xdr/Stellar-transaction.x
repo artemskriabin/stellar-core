@@ -28,7 +28,10 @@ enum OperationType
     MANAGE_DATA = 10,
     BUMP_SEQUENCE = 11,
     MANAGE_BUY_OFFER = 12,
-    PATH_PAYMENT_STRICT_SEND = 13
+    PATH_PAYMENT_STRICT_SEND = 13,
+    CREATE_POLL = 14,
+    CREATE_PERMISSION = 15,
+    CREATE_VOTE = 16
 };
 
 /* CreateAccount
@@ -279,6 +282,24 @@ struct BumpSequenceOp
     SequenceNumber bumpTo;
 };
 
+struct CreatePollOp 
+{
+    int32 numberOfChoices;
+    string details<>;
+};
+
+struct CreatePermissionOp
+{
+    AccountID accountID;
+    int64 pollID;
+};
+
+struct CreateVoteOp
+{
+    int64 pollID;
+    int32 choiceNumber;
+};
+
 /* An operation is the lowest unit of work that a transaction does */
 struct Operation
 {
@@ -317,6 +338,12 @@ struct Operation
         ManageBuyOfferOp manageBuyOfferOp;
     case PATH_PAYMENT_STRICT_SEND:
         PathPaymentStrictSendOp pathPaymentStrictSendOp;
+    case CREATE_POLL:
+        CreatePollOp createPollOp;
+    case CREATE_PERMISSION:
+        CreatePermissionOp createPermissionOp;
+    case CREATE_VOTE:
+        CreateVoteOp createVoteOp;
     }
     body;
 };
@@ -805,6 +832,50 @@ case BUMP_SEQUENCE_SUCCESS:
 default:
     void;
 };
+
+enum CreatePollResultCode
+{
+    // codes considered as "success" for the operation
+    CREATE_POLL_SUCCESS = 0,
+    // codes considered as "failure" for the operation
+    CREATE_POLL_BAD_SEQ = -1 // `bumpTo` is not within bounds
+};
+union CreatePollResult switch (CreatePollResultCode code)
+{
+case CREATE_POLL_SUCCESS:
+    struct {
+        int64 pollID; 
+    } success;
+default:
+    void;
+};
+
+enum CreatePermissionResultCode
+{
+    // codes considered as "success" for the operation
+    CREATE_PERMISSION_SUCCESS = 0
+    // codes considered as "failure" for the operation
+    
+};
+union CreatePermissionResult switch (CreatePermissionResultCode code)
+{
+default:
+    void;
+};
+
+enum CreateVoteResultCode
+{
+    // codes considered as "success" for the operation
+    CREATE_VOTE_SUCCESS = 0
+    // codes considered as "failure" for the operation
+    
+};
+union CreateVoteResult switch (CreateVoteResultCode code)
+{
+default:
+    void;
+};
+
 /* High level Operation Result */
 
 enum OperationResultCode
@@ -848,9 +919,15 @@ case opINNER:
     case BUMP_SEQUENCE:
         BumpSequenceResult bumpSeqResult;
     case MANAGE_BUY_OFFER:
-	ManageBuyOfferResult manageBuyOfferResult;
+	    ManageBuyOfferResult manageBuyOfferResult;
     case PATH_PAYMENT_STRICT_SEND:
         PathPaymentStrictSendResult pathPaymentStrictSendResult;
+    case CREATE_POLL:
+        CreatePollResult createPollResult;
+    case CREATE_PERMISSION:
+        CreatePermissionResult createPermissionResult;
+    case CREATE_VOTE:
+        CreateVoteResult createVoteResult;
     }
     tr;
 default:

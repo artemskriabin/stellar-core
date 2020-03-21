@@ -143,6 +143,20 @@ case DATA:
         AccountID accountID;
         string64 dataName;
     } data;
+case POLL:
+    struct {
+        int64 id;
+    } poll;
+case PERMISSION:
+    struct {
+        int64 pollID;
+        AccountID accountID;
+    } permission;
+case CHOICE:
+    struct {
+        int32 number;
+        int64 pollID;
+    } choice;
 };
 
 enum BucketEntryType

@@ -91,7 +91,7 @@ CreateAccountOpFrame::doApply(AbstractLedgerTxn& ltx)
 bool
 CreateAccountOpFrame::doCheckValid(uint32_t ledgerVersion)
 {
-    if (mCreateAccount.startingBalance <= 0)
+    if (mCreateAccount.startingBalance < 0)
     {
         innerResult().code(CREATE_ACCOUNT_MALFORMED);
         return false;

@@ -81,6 +81,30 @@ struct LedgerEntryIdCmp
                 return ad.dataName < bd.dataName;
             }
         }
+        case POLL:
+            return a.poll().id < b.poll().id;
+        case PERMISSION:
+        {
+            auto const& ap = a.permission();
+            auto const& bp = b.permission();
+            if (ap.pollID < bp.pollID)
+                return true;
+            if (bp.pollID < ap.pollID)
+                return false;
+            
+            return ap.accountID < bp.accountID;
+        }
+        case CHOICE:
+        {
+            auto const& ac = a.choice();
+            auto const& bc = b.choice();
+            if (ac.pollID < bc.pollID)
+                return true;
+            if (bc.pollID < ac.pollID)
+                return false;
+            
+            return ac.number < bc.number;
+        }
         }
         return false;
     }

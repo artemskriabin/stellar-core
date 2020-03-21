@@ -70,11 +70,11 @@ namespace stellar
 {
 
 const uint32_t LedgerManager::GENESIS_LEDGER_SEQ = 1;
-const uint32_t LedgerManager::GENESIS_LEDGER_VERSION = 0;
-const uint32_t LedgerManager::GENESIS_LEDGER_BASE_FEE = 100;
-const uint32_t LedgerManager::GENESIS_LEDGER_BASE_RESERVE = 100000000;
+const uint32_t LedgerManager::GENESIS_LEDGER_VERSION = 12;
+const uint32_t LedgerManager::GENESIS_LEDGER_BASE_FEE = 0;
+const uint32_t LedgerManager::GENESIS_LEDGER_BASE_RESERVE = 0;
 const uint32_t LedgerManager::GENESIS_LEDGER_MAX_TX_SIZE = 100;
-const int64_t LedgerManager::GENESIS_LEDGER_TOTAL_COINS = 1000000000000000000;
+const int64_t LedgerManager::GENESIS_LEDGER_TOTAL_COINS = 0;
 
 std::unique_ptr<LedgerManager>
 LedgerManager::create(Application& app)
